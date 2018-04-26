@@ -1,3 +1,66 @@
 <html>
+  <head>
+  <title> Simple 3 way switch </title>
+    <style>
+      span{
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  display: inline-block;
+  border-radius: 50px;
+  opacity: 0.1;
+}
+#switch{
+  padding: 5px 5px 2px 5px;
+  border: 1px solid #D8D8D8;
+  width: 70px;
+  border-radius: 50px;
+}
 
+#not-reviewed{
+  background-color: #cccccc;
+}
+#rejected{
+  background-color: #CC3333;
+}
+#agreed{
+  background-color: #47CC32;
+}
+
+.show{
+  opacity:1;
+}
+
+.border-not-reviewed{
+   border: 1px solid #D8D8D8 !important;
+}
+.border-rejected{
+   border: 1px solid #CC3333 !important;
+}
+.border-agreed{
+   border: 1px solid #47CC32 !important;
+}
+
+    </style>
+  </head>
+  <body>
+    <div id="switch">
+      <span id="not-reviewed" class="show"  onclick="selectMe('not-reviewed')" ></span>
+      <span id="rejected" onclick="selectMe('rejected')" ></span>
+      <span  id="agreed" onclick="selectMe('agreed')"></span>
+    </div>
+<script>
+function selectMe(e)
+{
+ var elms = document.getElementsByTagName('span');
+ for(var i=0;i<elms.length;i++)  {
+ 	elms[i].classList.remove('show');
+ }
+ var elm = document.getElementById(e);
+ elm.parentNode.className="";
+ elm.parentNode.classList.add("border-"+e);
+ elm.classList.add('show');
+}
+</script>
+  </body>
 </html>
