@@ -15,6 +15,7 @@
   border: 1px solid #D8D8D8;
   width: 70px;
   border-radius: 50px;
+  margin: 100px auto;
 }
 
 #not-reviewed{
@@ -44,10 +45,10 @@
     </style>
   </head>
   <body>
-    <div id="switch">
-      <span id="not-reviewed" class="show"  onclick="selectMe('not-reviewed')" ></span>
+    <div id="switch" class="border-agreed">
+      <span id="not-reviewed" onclick="selectMe('not-reviewed')" ></span>
       <span id="rejected" onclick="selectMe('rejected')" ></span>
-      <span  id="agreed" onclick="selectMe('agreed')"></span>
+      <span  id="agreed" class="show" onclick="selectMe('agreed')"></span>
     </div>
 <script>
 function selectMe(e)
